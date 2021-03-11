@@ -1,9 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
+//import styled from 'styled-components'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import NavigationBar from './components/NavigationBar'
-import { Container, Row, Col } from 'react-bootstrap'
-import { Home } from './pages/Home.js'
+import NavigationBarNew from './components/NavigationBarNew'
+import { Container, 
+ //   Row, 
+//    Col 
+} from 'react-bootstrap'
+import { Home } from './pages/Home'
+import { DataGrid } from './pages/DataGrid'
 import './App.css';
 
 function App() {
@@ -11,10 +15,11 @@ function App() {
         <React.Fragment>
             <Container>
                 <Router>
-                    <NavigationBar />
+                    <NavigationBarNew />
                     <Switch>
                         <Route exact path="/" component={Home} />
-                    </Switch>
+                        <Route exact path="/datagrid" component={DataGrid} />
+                     </Switch>
                 </Router>
             </Container>
         </React.Fragment>

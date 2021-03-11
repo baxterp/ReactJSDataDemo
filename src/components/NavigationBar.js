@@ -1,9 +1,9 @@
 import React from 'react'
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    useParams,
+    // Switch,
+    // Route,
+    // useParams,
   } from "react-router-dom";
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button, Container, Row, Col } from 'react-bootstrap'
 import styled from 'styled-components'
