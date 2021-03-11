@@ -24,8 +24,11 @@ class DataGridComp extends React.Component {
       };
     }
   
+//http://brpsoft.co.uk/services2/products
+//http://localhost:8080/products
+
     componentDidMount() {
-      fetch("http://localhost:8080/products")
+      fetch("http://brpsoft.co.uk/services2/products")
         .then(res => res.json())
         .then(
           (result) => {
