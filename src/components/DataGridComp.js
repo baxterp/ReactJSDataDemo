@@ -1,16 +1,21 @@
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
+import styled from 'styled-components';
 
 const columns = [{
     dataField: 'productName',
-    text: 'Product Name'
+    text: 'Product Name', sort: true
   }, {
     dataField: 'unitPrice',
-    text: 'Unit Price'
-  }, {
+    text: 'Unit Price', sort: true,
+    formatter: (value, row) => (
+      <span>
+        £{value}
+      </span>
+    )}, {
     dataField: 'unitsInStock',
-    text: 'Units In Stock'
+    text: 'Units In Stock', sort: true
   }];
 
 class DataGridComp extends React.Component {
@@ -56,18 +61,31 @@ class DataGridComp extends React.Component {
         return <div>Loading...</div>;
       } else {
         return (
+          <Styles>
             <BootstrapTable keyField='productName' 
-                tableStyle={ { background: '#00ff00' } } 
-                headerStyle={ { background: '#00ff00' } } 
-                bodyStyle={ { background: '#00ff00' } }
+                bootstrap4
                 data={ products } 
                 columns={ columns } 
-                striped hover 
-                pagination={ paginationFactory() } 
-                />
+                striped 
+                hover dark
+                pagination={ paginationFactory() } >
+                </BootstrapTable>
+          </Styles>
         );
       }
     }
   }
 
   export default DataGridComp;
+
+  const Styles = styled.div`
+
+  .table {
+    color: #FFF7D6 !important;
+    background-color: #002935 !important;
+  }
+
+  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #9ECBDB;
+  }
+`

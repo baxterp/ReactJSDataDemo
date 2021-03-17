@@ -2,6 +2,9 @@ import 'popper.js';
 import 'jquery/dist/jquery.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
+import 'react-bootstrap-table-next/dist/react-bootstrap-table-next.js';
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
