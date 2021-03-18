@@ -5,17 +5,20 @@ import styled from 'styled-components';
 
 const columns = [{
     dataField: 'productName',
-    text: 'Product Name', sort: true
+    text: 'Product Name', 
+    sort: true
   }, {
     dataField: 'unitPrice',
-    text: 'Unit Price', sort: true,
+    text: 'Unit Price', 
+    sort: true,
     formatter: (value, row) => (
       <span>
         £{value}
       </span>
     )}, {
     dataField: 'unitsInStock',
-    text: 'Units In Stock', sort: true
+    text: 'Units In Stock', 
+    sort: true
   }];
 
 class DataGridComp extends React.Component {
@@ -80,12 +83,9 @@ class DataGridComp extends React.Component {
 
   const Styles = styled.div`
 
-  .table {
-    color: #FFF7D6 !important;
-    background-color: #002935 !important;
+  thead {
+    font-size:14pt;
   }
+  
 
-  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-    background-color: #9ECBDB;
-  }
 `

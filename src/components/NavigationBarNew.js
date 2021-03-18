@@ -23,11 +23,10 @@ class NavigationBarNew extends React.Component{
                             <Col md={12}>
                             <Router>
                                     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-                                        <Navbar.Brand href="/">React Test</Navbar.Brand>
+                                        <Navbar.Brand href="/">Home</Navbar.Brand>
                                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                         <Navbar.Collapse id="basic-navbar-nav">
                                             <Nav className="mr-auto">
-                                                <Nav.Link href="/">Home</Nav.Link>
                                                 <Nav.Link href="/datagrid">Data Grid</Nav.Link>
 
                                                 {/* <Nav.Item><NavLink exact activeClassName="active" to="/">Home</NavLink></Nav.Item>

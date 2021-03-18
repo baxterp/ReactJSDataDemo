@@ -1,6 +1,16 @@
 import 'popper.js';
 import 'jquery/dist/jquery.min.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Default
+//import 'bootstrap/dist/css/bootstrap.min.css';
+
+//Bootswatch themes
+//import 'bootswatch/dist/darkly/bootstrap.min.css';
+import 'bootswatch/dist/slate/bootstrap.min.css';
+
+//import 'bootswatch/dist/
+
+
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table-next.js';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.css';
