@@ -44,7 +44,8 @@ class DataGridComp extends React.Component {
               isLoaded: true,
               products: result
             });
-            console.log('Product data: ' + result);
+            console.log('Product data: ');
+            console.log(result);
           },
 
           (error) => {
@@ -70,7 +71,7 @@ class DataGridComp extends React.Component {
                 data={ products } 
                 columns={ columns } 
                 striped 
-                hover dark
+                hover
                 pagination={ paginationFactory() } >
                 </BootstrapTable>
           </Styles>

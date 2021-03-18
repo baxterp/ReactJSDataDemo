@@ -10,7 +10,7 @@ export const DataGrid = () => (
             <Styles>
                 <Container className="page-container">
                 <Row>
-                    <Col md={10}>
+                    <Col md={12}>
                         <br />
                         <h5>
                             This is an example using ReactJS Bootstrap Table, with data from a REST HTTP service returning database data.
@@ -19,7 +19,7 @@ export const DataGrid = () => (
                     </Col>
                     </Row>
                     <Row>
-                        <Col md={10}>
+                        <Col md={12}>
                             <DataGridComp />
                         </Col>
                     </Row>
@@ -31,7 +31,7 @@ export const DataGrid = () => (
     const Styles = styled.div`
     .page-container{
         padding-top:5px;
-        padding-left:150px;
+        padding-left:35px;
     }
 
 `

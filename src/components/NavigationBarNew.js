@@ -16,7 +16,7 @@ class NavigationBarNew extends React.Component{
                         <Row>
                             <Col style={{textAlign: "center"}}>
                                 <h1>React JS Demo Site</h1>
-                                <h4>This is blah blah</h4>
+                                <br />
                             </Col>
                         </Row>
                         <Row>
@@ -27,7 +27,8 @@ class NavigationBarNew extends React.Component{
                                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                         <Navbar.Collapse id="basic-navbar-nav">
                                             <Nav className="mr-auto">
-                                                <Nav.Link href="/datagrid">Data Grid</Nav.Link>
+                                            <Nav.Link href="/datagrid" style={{fontSize:"14pt"}}>Data Grid</Nav.Link>
+                                            <Nav.Link href="/barchart" style={{fontSize:"14pt"}}>Barchart</Nav.Link>
 
                                                 {/* <Nav.Item><NavLink exact activeClassName="active" to="/">Home</NavLink></Nav.Item>
                                                 <Nav.Item><NavLink activeClassName="active" to="/datagrid">Data Grid</NavLink></Nav.Item> */}
@@ -44,6 +45,8 @@ class NavigationBarNew extends React.Component{
     }
 }
 
+//
+
 export default NavigationBarNew;
 
 const Styles = styled.div`
@@ -52,5 +55,9 @@ const Styles = styled.div`
     }
   .centered-text {
     textAlign: "center";
+  }
+
+  .nav-text {
+      font-size: 14pt:
   }
 `
