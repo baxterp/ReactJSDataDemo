@@ -6,8 +6,12 @@ import { Container,
  //   Row, 
 //    Col 
 } from 'react-bootstrap'
+
 import { Home } from './pages/Home'
 import { DataGrid } from './pages/DataGrid'
+//import { NasaImages } from './pages/NasaImageAPI'
+import NasaImageAPIComp from './components/NasaImageAPIComp'
+
 import './App.css';
 
 function App() {
@@ -19,12 +23,16 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/datagrid" component={DataGrid} />
+                        <Route exact path="/nasaimages" component={NasaImageAPIComp} />
                      </Switch>
                 </Router>
             </Container>
         </React.Fragment>
   );
 }
+
+//
+
 
 // const Styles = styled.div`
 //   .page-container{

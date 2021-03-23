@@ -32,7 +32,7 @@ class NavigationBarNew extends React.Component{
                                         <Navbar.Collapse id="basic-navbar-nav">
                                             <Nav className="mr-auto">
                                                 <Nav.Link href="/datagrid" style={{fontSize:"14pt"}}>Data Grid</Nav.Link>
-                                                <Nav.Link href="/barchart" style={{fontSize:"14pt"}}>Barchart</Nav.Link>
+                                                <Nav.Link href="/nasaimages" style={{fontSize:"14pt"}}>Nasa Images</Nav.Link>
                                             </Nav>
                                         </Navbar.Collapse>
                                     </Navbar>
