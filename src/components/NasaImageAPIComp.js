@@ -61,21 +61,31 @@ class NasaImageAPIComp extends React.Component {
   
     render() {
 
-    const { error, isLoaded, image_data, display_date } = this.state;
+        const { error, isLoaded, image_data, display_date } = this.state;
 
-    let date_output;
-    if(display_date !== '')
-        date_output = <h3>Images for date : {display_date}</h3>;
+        let date_output;
+        if(display_date !== '')
+            date_output = <h3>Images for date : {display_date}</h3>;
 
-    if (error) {
-        return <div>Error: {error.message}</div>;
-    } 
-    else if (!isLoaded) {
-        return <div>Loading...</div>;
-    } 
-    else 
-    {
-    return (
+        if (error) {
+            return <div>Error: {error.message}</div>;
+        } 
+        else if (!isLoaded) {
+            return (
+                <Container>
+                <Row style={{paddingTop:10}}>
+                    <Col md={1}>
+                    </Col>
+                    <Col md={7}>
+                        <h2>Loading...</h2>
+                    </Col>
+                </Row>
+                </Container>
+            )
+        } 
+        else 
+        {
+        return (
 
             <Container>
                 <Row style={{paddingTop:10}}>
@@ -116,24 +126,24 @@ class NasaImageAPIComp extends React.Component {
                             </Col>
                         </Row>
                     </Container>
-            {image_data.map(item => (
-                    <Container>
-                        <Row key={item.id}>
-                            <Col md={2}>
-                            </Col>
-                            <Col md={8}>
-                                <h4>{item.camera.full_name}</h4>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col md={2}>
-                            </Col>
-                            <Col md={8}>
-                                <img src={item.img_src} height='700px' width='700px' alt = '' style={{ paddingBottom: 10, paddingTop: 5 }} />
-                            </Col>
-                        </Row>
-                    </Container>
-            ))}
+                    {image_data.map(item => (
+                        <Container>
+                            <Row key={item.id}>
+                                <Col md={2}>
+                                </Col>
+                                <Col md={8}>
+                                    <h4>{item.camera.full_name}</h4>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col md={2}>
+                                </Col>
+                                <Col md={8}>
+                                    <img src={item.img_src} height='700px' width='700px' alt = '' style={{ paddingBottom: 10, paddingTop: 5 }} />
+                                </Col>
+                            </Row>
+                        </Container>
+                    ))}
                 </Row>      
             </Container>
 
