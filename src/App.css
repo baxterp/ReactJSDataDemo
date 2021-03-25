@@ -14,3 +14,10 @@
 .rdtPicker {
    background-color: inherit;
 }
+
+.resizeable-img {
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+  padding-top: 2px;
+}

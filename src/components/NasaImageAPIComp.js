@@ -3,7 +3,6 @@ import "react-datetime/css/react-datetime.css";
 import Datetime from "react-datetime";
 import { Container, Row, Col } from 'react-bootstrap'
 
-
 class NasaImageAPIComp extends React.Component {
     constructor(props) {
       super(props);
@@ -89,25 +88,23 @@ class NasaImageAPIComp extends React.Component {
 
             <Container>
                 <Row style={{paddingTop:10}}>
-                    <Col md={4}>
-                    </Col>
-                    <Col md={4}>
+                   <Col md={12} className="text-center">
                         <h2>Nasa image API demo</h2>
-                    </Col>
+                    </Col>                    
                 </Row>
                 <Row>
                     <Col md={2}>
                     </Col>
-                    <Col md={8}>
+                    <Col md={8} className="text-center">
                         <p>The following page uses an API provided by Nasa to show the images for a selected date, taken from Nasa's Curiosity Rover. Not all dates have image data available.</p>
+                    </Col>                    
+                    <Col md={2}>
                     </Col>
                 </Row>
                 <Row style={{paddingTop:25}}>
-                    <Col md={4} >
-                    </Col>
-                    <Col md={4}>
+                    <Col md={12} className="text-center">
                         <h3>Select a date to view images</h3>
-                    </Col>
+                    </Col>                    
                 </Row>
                 <Row>
                     <Col md={2}>
@@ -119,9 +116,7 @@ class NasaImageAPIComp extends React.Component {
                 <Row style={{paddingTop:40}}>
                     <Container>
                         <Row style={{paddingBottom:40}}>
-                            <Col md={4}>
-                            </Col>
-                            <Col md={4}>
+                            <Col md={12} className="text-center">
                                 {date_output}
                             </Col>
                         </Row>
@@ -139,7 +134,7 @@ class NasaImageAPIComp extends React.Component {
                                 <Col md={2}>
                                 </Col>
                                 <Col md={8}>
-                                    <img src={item.img_src} height='700px' width='700px' alt = '' style={{ paddingBottom: 10, paddingTop: 5 }} />
+                                    <img src={item.img_src} class="resizeable-img" alt = '' />
                                 </Col>
                             </Row>
                         </Container>
