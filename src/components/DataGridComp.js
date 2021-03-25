@@ -36,7 +36,7 @@ class DataGridComp extends React.Component {
 //http://localhost:8080/products
 
     componentDidMount() {
-      fetch("http://brpsoft.co.uk/services2/products")
+      fetch("/getproducts")
         .then(res => res.json())
         .then(
           (result) => {
