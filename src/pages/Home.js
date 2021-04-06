@@ -6,7 +6,7 @@ import image from '../assets/reactjs.jpg';
 import styled from 'styled-components'
 
 export const Home = () => (
-    <React.Fragment>
+<React.Fragment>
     <Styles>
         <Container className="page-container">
             <Row>
