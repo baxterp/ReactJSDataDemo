@@ -23,7 +23,7 @@ class NavigationBarNew extends React.Component{
                         </Row>
                         <Row>
                             <Col md={12}>
-                            <Router>
+                                <Router>
                                     <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
                                         <Navbar.Brand href="/">
                                             <img src={icon} height="35px" alt='where is it ??' />
@@ -31,14 +31,13 @@ class NavigationBarNew extends React.Component{
                                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                         <Navbar.Collapse id="basic-navbar-nav">
                                             <Nav className="mr-auto">
-                                                <Nav.Link href="/datagrid" style={{fontSize:"14pt"}}>Data Grid</Nav.Link>
-                                                {/* <Nav.Link href="/nasaimages" style={{fontSize:"14pt"}}>Nasa Images</Nav.Link> */}
-                                                <NavDropdown title="Consuming API" style={{fontSize:"14pt"}}>
+                                                <NavDropdown title="Consuming APIs" style={{fontSize:"14pt"}}>
                                                     <NavDropdown.Item href="/nasaimages">Nasa Image API</NavDropdown.Item>
                                                     <NavDropdown.Item href="/flickr">Flickr Search API</NavDropdown.Item>
-                                                    {/* <NavDropdown.Divider />
-                                                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
-                                            </NavDropdown>                                                
+                                                    <NavDropdown.Divider />
+                                                    <NavDropdown.Item href="/qrcode">QR Code Generator</NavDropdown.Item>
+                                                </NavDropdown>                                                
+                                                <Nav.Link href="/datagrid" style={{fontSize:"14pt"}}>Data Grid</Nav.Link>
                                             </Nav>
                                         </Navbar.Collapse>
                                     </Navbar>

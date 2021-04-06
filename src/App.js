@@ -1,7 +1,7 @@
 import React from 'react'
 //import styled from 'styled-components'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import NavigationBarNew from './components/NavigationBarNew'
+import NavigationBar from './components/NavigationBarNew'
 import { Container, 
  //   Row, 
 //    Col 
@@ -9,9 +9,9 @@ import { Container,
 
 import { Home } from './pages/Home'
 import { DataGrid } from './pages/DataGrid'
-//import { NasaImages } from './pages/NasaImageAPI'
 import NasaImageAPIComp from './components/NasaImageAPIComp'
 import FlickrImageAPIComp from './components/FlickrAPIComp'
+import QRCodeAPIComp from './components/QRCodeAPIComp'
 
 import './App.css';
 
@@ -20,21 +20,19 @@ function App() {
         <React.Fragment>
             <Container>
                 <Router>
-                    <NavigationBarNew />
+                    <NavigationBar />
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route exact path="/datagrid" component={DataGrid} />
                         <Route exact path="/nasaimages" component={NasaImageAPIComp} />
                         <Route exact path="/flickr" component={FlickrImageAPIComp} />
+                        <Route exact path="/qrcode" component={QRCodeAPIComp} />
                      </Switch>
                 </Router>
             </Container>
         </React.Fragment>
   );
 }
-
-//
-
 
 // const Styles = styled.div`
 //   .page-container{
@@ -49,8 +47,6 @@ function App() {
 //       padding: 15px;
 //       font-size: 13px;
 //   }   
-
 // `
-
 
 export default App;

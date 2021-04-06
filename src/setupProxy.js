@@ -34,4 +34,16 @@ module.exports = function(app) {
       },
     })
   );
+
+  app.use(
+    ['/qrcodeapi'],
+    createProxyMiddleware({
+      target: 'https://api.qrserver.com/v1/create-qr-code/',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/qrcodeapi': '',
+      },
+    })
+  );
+
 };

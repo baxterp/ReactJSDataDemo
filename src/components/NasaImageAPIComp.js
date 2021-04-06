@@ -134,7 +134,7 @@ class NasaImageAPIComp extends React.Component {
                                 <Col md={2}>
                                 </Col>
                                 <Col md={8}>
-                                    <img src={item.img_src} class="resizeable-img" alt = '' />
+                                    <img src={item.img_src} class="resizeable-img" alt = 'missing' />
                                 </Col>
                             </Row>
                         </Container>

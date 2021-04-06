@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import $ from 'jquery'
+//import $ from 'jquery'
 
-class FlickrAPIComp extends React.Component {
+class QRCodeAPIComp extends React.Component {
 
     constructor(props) {
       super(props);
@@ -10,7 +10,8 @@ class FlickrAPIComp extends React.Component {
       this.state = {
         error: null,
         isLoaded: false,
-        image_data: [],
+        qrcode_data: '',
+        searchTerm: ''
       };
     }
 
@@ -31,27 +32,24 @@ class FlickrAPIComp extends React.Component {
         var searchTerm = event.target.value;
         console.log(searchTerm);
 
-        var photoQueryURL = '/flickrapi?' + $.param({
-            'method': 'flickr.photos.search',
-            'api_key': '17c2d82e29e9e9ab2858f1b7bfadb446',
-            'text': searchTerm,
-            'format': 'json',
-            'page': 1,
-            'per_page':200
-        }) + '&nojsoncallback=true';
+        this.setState({
+            searchTerm: searchTerm
+        });
 
-        console.log(photoQueryURL);
+        var QRCodeURL = '/qrcodeapi?size=600x600&data=' + searchTerm;
 
-        fetch(photoQueryURL)
-            .then(res => res.json())
+        console.log(QRCodeURL);
+
+        fetch(QRCodeURL)
+            .then(res => res)
             .then(
                 (result) => {
-                    console.log('image data 1');
-                    console.log(result);
+                    console.log('QR code data 1');
+                    console.log(result.url);
 
                     this.setState({
                         isLoaded: true,
-                        image_data: result
+                        qrcode_data: result.url
                     });
                 },
                 (error) => {
@@ -64,40 +62,40 @@ class FlickrAPIComp extends React.Component {
     }
 
     render() {
-        const { error, isLoaded, image_data } = this.state;
+        const { error, isLoaded, qrcode_data, searchTerm } = this.state;
 
-        window.$image_data = image_data;
+        window.$qrcode_data = qrcode_data;
 
         if (error) {
           return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
-          return (                        
-            <Container>
-                <Row>
-                    <Col xl={12} style={{paddingLeft:20,paddingTop:10}}>
-                        <h1 className='h1'>Loading..</h1>
-                    </Col>
-                </Row>
-            </Container>
-            );
-         } 
-        else if (image_data.photos){
+            return (                        
+                  <Container>
+                      <Row>
+                          <Col xl={12} style={{paddingLeft:20,paddingTop:10}}>
+                              <h1 className='h1'>Loading..</h1>
+                          </Col>
+                      </Row>
+                  </Container>
+                  );
+        } 
+        else if (qrcode_data.length > 0){
             return (
                 <Container>
                     <Row>
                         <Container>
                             <Row>
                                 <Col xl={12} style={{paddingTop:10}} className='text-center' >
-                                    <h1>Flickr Image Search</h1>
+                                    <h1>QR Code Generator</h1>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col xl={12} style={{paddingTop:10}} className='text-center' >
-                                    <h3>Type in image tag to search Flickr with below</h3>
+                                    <h3>Type in text to create a QR code from below</h3>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col xl={12} style={{padding:20}}>
+                                <Col xl={12} style={{padding:20}} className='text-center' >
                                     <div className="input-group input-group-lg">
                                         <input  
                                                 onKeyDown={this.handleInputChange.bind(this)}
@@ -113,23 +111,13 @@ class FlickrAPIComp extends React.Component {
                     <Row>
                         <Container>
                             <Row>
-                                <Col xl={12} style={{paddingLeft:50,paddingTop: 10,paddingBottom: 50}}>
-                                    <span>
-                                    {image_data.photos.photo.map(function(image) {
-
-                                        var imageURL = "https://farm" + image.farm + ".staticflickr.com/" + image.server + "/" + image.id + "_" + image.secret + ".jpg";
-                                        console.log(imageURL);
-
-                                        return(
-                                             <a href={imageURL} className="image-link" rel="noreferrer" target="_blank" >
-                                                <img src={imageURL} 
-                                                    alt="missing" imageonload
-                                                    className="flickr-img" />
-                                             </a>
-                                            )
-                                        })
-                                    }      
-                                    </span>
+                                <Col xl={12} style={{paddingLeft:50}} >
+                                    <h1>QR code generated for search term : {searchTerm}</h1>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xl={12} style={{padding:50}} className='text-center' >
+                                    <img src={qrcode_data} alt='missing' class="resizeable-img" />
                                 </Col>
                             </Row>
                         </Container>
@@ -142,16 +130,16 @@ class FlickrAPIComp extends React.Component {
                 <Container>
                     <Row>
                         <Col xl={12} style={{paddingTop:10}} className='text-center' >
-                            <h1>Flickr Image Search</h1>
+                            <h1>QR Code Generator</h1>
                         </Col>
                     </Row>
                     <Row>
                         <Col xl={12} style={{paddingTop:10}} className='text-center' >
-                            <h3>Type in image tag to search Flickr with below</h3>
+                            <h3>Type in text to create a QR code from below</h3>
                         </Col>
                     </Row>
                     <Row>
-                        <Col xl={12} style={{padding:20}}>
+                        <Col xl={12} style={{padding:20}} className='text-center' >
                             <div className="input-group input-group-lg">
                                 <input  
                                         onKeyDown={this.handleInputChange.bind(this)}
@@ -168,4 +156,4 @@ class FlickrAPIComp extends React.Component {
     }
 
 
-export default FlickrAPIComp;
+export default QRCodeAPIComp;
