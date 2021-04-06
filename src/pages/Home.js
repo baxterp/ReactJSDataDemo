@@ -9,14 +9,19 @@ export const Home = () => (
     <React.Fragment>
     <Styles>
         <Container className="page-container">
-        <Row>
-            <Col md={10}>
+            <Row>
+                <Col md={12}style={{paddingBottom:10}} >
+                    <br />
+                    <h5>
+                        This site is designed to show my proficiency in React JS, with all components and pages being created from scratch after researching the subject using online resources available freely to all.
+                    </h5>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={12} className='text-center' style={{paddingBottom:20}} >
+                    <a href="https://github.com/baxterp/datademo" class="btn" role="button" rel="noreferrer" target="_blank" >Project Github Repositary</a>
+                </Col>
                 <br />
-                <h5>
-                    This site is designed to show my proficiency in React JS, with all components and pages being created from scratch after researching the subject using online resources available freely to all.
-                </h5>
-                <br />
-            </Col>
             </Row>
             <Row>
                 <Col md={10}>
