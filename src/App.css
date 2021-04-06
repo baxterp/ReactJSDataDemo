@@ -21,3 +21,11 @@
   padding-bottom: 10px;
   padding-top: 2px;
 }
+
+.flickr-img {
+  padding:5px;
+  height:auto;
+  width:auto;
+  max-width:200px;
+  max-height:200px;
+}

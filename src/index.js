@@ -15,6 +15,10 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table-next.js';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table2.css';
 
+import 'magnific-popup/dist/jquery.magnific-popup.min.js';
+import 'magnific-popup/dist/magnific-popup.css';
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

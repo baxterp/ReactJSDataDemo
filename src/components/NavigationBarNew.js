@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router
 
 } from "react-router-dom";
-import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap'
+import { Navbar, Nav, Container, Row, Col, NavDropdown } from 'react-bootstrap'
 import styled from 'styled-components'
 
 import icon from '../assets/logo512.png';
@@ -32,7 +32,13 @@ class NavigationBarNew extends React.Component{
                                         <Navbar.Collapse id="basic-navbar-nav">
                                             <Nav className="mr-auto">
                                                 <Nav.Link href="/datagrid" style={{fontSize:"14pt"}}>Data Grid</Nav.Link>
-                                                <Nav.Link href="/nasaimages" style={{fontSize:"14pt"}}>Nasa Images</Nav.Link>
+                                                {/* <Nav.Link href="/nasaimages" style={{fontSize:"14pt"}}>Nasa Images</Nav.Link> */}
+                                                <NavDropdown title="Consuming API" style={{fontSize:"14pt"}}>
+                                                    <NavDropdown.Item href="/nasaimages">Nasa Image API</NavDropdown.Item>
+                                                    <NavDropdown.Item href="/flickr">Flickr Search API</NavDropdown.Item>
+                                                    {/* <NavDropdown.Divider />
+                                                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
+                                            </NavDropdown>                                                
                                             </Nav>
                                         </Navbar.Collapse>
                                     </Navbar>

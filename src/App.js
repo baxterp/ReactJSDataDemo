@@ -11,6 +11,7 @@ import { Home } from './pages/Home'
 import { DataGrid } from './pages/DataGrid'
 //import { NasaImages } from './pages/NasaImageAPI'
 import NasaImageAPIComp from './components/NasaImageAPIComp'
+import FlickrImageAPIComp from './components/FlickrAPIComp'
 
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
                         <Route exact path="/" component={Home} />
                         <Route exact path="/datagrid" component={DataGrid} />
                         <Route exact path="/nasaimages" component={NasaImageAPIComp} />
+                        <Route exact path="/flickr" component={FlickrImageAPIComp} />
                      </Switch>
                 </Router>
             </Container>
