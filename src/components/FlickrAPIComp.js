@@ -104,7 +104,7 @@ class FlickrAPIComp extends React.Component {
                                         console.log(imageURL);
 
                                         return(
-                                             <a href={imageURL} className="image-link">
+                                             <a href={imageURL} className="image-link" rel="noreferrer" target="_blank" >
                                                 <img src={imageURL} 
                                                     alt="missing" imageonload
                                                     className="flickr-img" />
