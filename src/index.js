@@ -7,9 +7,7 @@ import 'jquery/dist/jquery.min.js';
 //Bootswatch themes
 //import 'bootswatch/dist/darkly/bootstrap.min.css';
 import 'bootswatch/dist/slate/bootstrap.min.css';
-
 //import 'bootswatch/dist/
-
 
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'react-bootstrap-table-next/dist/react-bootstrap-table-next.js';
