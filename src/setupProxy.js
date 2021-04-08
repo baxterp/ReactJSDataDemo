@@ -69,12 +69,12 @@ module.exports = function(app) {
   );
 
   app.use(
-    ['/weathermap'],
+    ['/weathermapapi'],
     createProxyMiddleware({
       target: 'https://openweathermap.org/weathermap',
       changeOrigin: true,
       pathRewrite: {
-        '^/weathermap': '',
+        '^/weathermapapi': '',
       },
     })
   );
