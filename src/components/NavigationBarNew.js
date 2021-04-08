@@ -34,8 +34,9 @@ class NavigationBarNew extends React.Component{
                                                 <NavDropdown title="Consuming APIs" style={{fontSize:"14pt"}}>
                                                     <NavDropdown.Item href="/nasaimages">Nasa Image API</NavDropdown.Item>
                                                     <NavDropdown.Item href="/flickr">Flickr Search API</NavDropdown.Item>
-                                                    <NavDropdown.Divider />
                                                     <NavDropdown.Item href="/qrcode">QR Code Generator</NavDropdown.Item>
+                                                    <NavDropdown.Divider />
+                                                    <NavDropdown.Item href="/weathermap">Weather Map API</NavDropdown.Item>
                                                 </NavDropdown>                                                
                                                 <Nav.Link href="/datagrid" style={{fontSize:"14pt"}}>Data Grid</Nav.Link>
                                             </Nav>

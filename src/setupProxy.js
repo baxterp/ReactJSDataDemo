@@ -46,4 +46,37 @@ module.exports = function(app) {
     })
   );
 
+  app.use(
+    ['/postionapi'],
+    createProxyMiddleware({
+      target: 'http://api.positionstack.com/v1/forward',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/postionapi': '',
+      },
+    })
+  );
+
+  app.use(
+    ['/weatherapi'],
+    createProxyMiddleware({
+      target: 'http://api.openweathermap.org/data/2.5/weather',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/weatherapi': '',
+      },
+    })
+  );
+
+  app.use(
+    ['/weathermap'],
+    createProxyMiddleware({
+      target: 'https://openweathermap.org/weathermap',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/weathermap': '',
+      },
+    })
+  );
+
 };

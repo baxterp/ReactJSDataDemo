@@ -1,0 +1,12 @@
+positionstack 
+98db2f4509e757fd27dc9e44a1ba9162
+http://api.positionstack.com/v1/forward?access_key=98db2f4509e757fd27dc9e44a1ba9162&query=Coventry UK
+
+OpenWeather
+a4c4828132cc7eb3c0e809f91d915282
+https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temp_new&lat=52.412945&lon=-1.508416&zoom=10
+
+
+api.openweathermap.org/data/2.5/weather?q=London&appid=a4c4828132cc7eb3c0e809f91d915282
+http://maps.openweathermap.org/maps/2.0/weather/TA2/1/1/1?date=1527811200&opacity=0.9&fill_bound=true&appid=a4c4828132cc7eb3c0e809f91d915282
+https://tile.openweathermap.org/map/clouds_new/1/1/1.png?appid=a4c4828132cc7eb3c0e809f91d915282

@@ -19,7 +19,7 @@ export const Home = () => (
             </Row>
             <Row>
                 <Col md={12} className='text-center' style={{paddingBottom:20}} >
-                    <a href="https://github.com/baxterp/datademo" class="btn" role="button" rel="noreferrer" target="_blank" >Project Github Repositary</a>
+                    <a href="https://github.com/baxterp/datademo" className="btn" role="button" rel="noreferrer" target="_blank" >Project Github Repositary</a>
                 </Col>
                 <br />
             </Row>

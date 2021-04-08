@@ -12,6 +12,7 @@ import { DataGrid } from './pages/DataGrid'
 import NasaImageAPIComp from './components/NasaImageAPIComp'
 import FlickrImageAPIComp from './components/FlickrAPIComp'
 import QRCodeAPIComp from './components/QRCodeAPIComp'
+import WeatherAPIComp from './components/WeatherMapAPIComp'
 
 import './App.css';
 
@@ -27,6 +28,7 @@ function App() {
                         <Route exact path="/nasaimages" component={NasaImageAPIComp} />
                         <Route exact path="/flickr" component={FlickrImageAPIComp} />
                         <Route exact path="/qrcode" component={QRCodeAPIComp} />
+                        <Route exact path="/weathermap" component={WeatherAPIComp} />
                      </Switch>
                 </Router>
             </Container>
