@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import Iframe from 'react-iframe'
 //import $ from 'jquery'
 
 class WeatherMapAPIComp extends React.Component {
@@ -13,7 +14,8 @@ class WeatherMapAPIComp extends React.Component {
         searchTerm: '',
         longitude: 0,
         latitude: 0,
-        weatherdata: []
+        weatherdata: [],
+        weatherMapURL: ''
       };
     }
 
@@ -69,18 +71,21 @@ class WeatherMapAPIComp extends React.Component {
                     fetch(weatherApiURL)
                         .then(res => res.json())
                         .then((result) => {
-                            console.log('Weather data');
+                            console.log('Weather API data');
                             console.log(result);
+
+                            // /weathermapapi
+                            // https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=52.412945&lon=-1.508416&zoom=10
+                            var weatherMapURL = 'https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=' + latitude + '&lon=' + longitude + '&zoom=10';
+                            console.log(weatherMapURL);
 
                             this.setState({
                                 isLoaded: true,
                                 weatherdata: result,
                                 latitude: latitude,
-                                longitude: longitude
+                                longitude: longitude,
+                                weatherMapURL: weatherMapURL
                             });
-
-                            //fetch
-                            //https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=52.412945&lon=-1.508416&zoom=10
         
                         },
                         (error) => {
@@ -103,11 +108,12 @@ class WeatherMapAPIComp extends React.Component {
     }
 
     render() {
-        const { error, isLoaded, longitude, latitude, searchTerm, weatherdata } = this.state;
+        const { error, isLoaded, longitude, latitude, searchTerm, weatherdata, weatherMapURL } = this.state;
 
         window.$longdidtude = longitude;
         window.$latitude = latitude;
         window.$weatherdata = weatherdata;
+        window.$weatherMapURL = weatherMapURL;
 
         var weatherDescription = weatherdata.weather ? weatherdata.weather[0] : null;
 
@@ -207,6 +213,32 @@ class WeatherMapAPIComp extends React.Component {
                             <Row>
                                 <Col xl={12} style={{paddingLeft:80}}>
                                     <h4>Wind speed: {windSpeed} mph</h4>
+                                </Col>
+                            </Row>
+                        </Container>
+                        <Container>
+                            <Row>
+                                <Col xl={12} style={{paddingLeft:50,paddingTop:50}}>
+                                    <h2>Weather Map</h2>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xl={12} style={{paddingLeft:80,paddingRight:50}}>
+                                <Iframe url={weatherMapURL}
+                                    width="100%"
+                                    height="500px"
+                                    id="myId"
+
+                                    display="initial"
+                                    position="relative"/>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xl={12} style={{paddingLeft:80}}>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
                                 </Col>
                             </Row>
                         </Container>
