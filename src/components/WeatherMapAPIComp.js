@@ -74,8 +74,6 @@ class WeatherMapAPIComp extends React.Component {
                             console.log('Weather API data');
                             console.log(result);
 
-                            // /weathermapapi
-                            // https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=52.412945&lon=-1.508416&zoom=10
                             var weatherMapURL = 'https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=' + latitude + '&lon=' + longitude + '&zoom=10';
                             console.log(weatherMapURL);
 
@@ -94,8 +92,6 @@ class WeatherMapAPIComp extends React.Component {
                                 error
                             });
                         })
-
-
 
                 },
                 (error) => {
@@ -227,16 +223,13 @@ class WeatherMapAPIComp extends React.Component {
                                 <Iframe url={weatherMapURL}
                                     width="100%"
                                     height="500px"
-                                    id="myId"
-
+                                    id="iFrameWeather"
                                     display="initial"
                                     position="relative"/>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col xl={12} style={{paddingLeft:80}}>
-                                    <br />
-                                    <br />
                                     <br />
                                     <br />
                                 </Col>

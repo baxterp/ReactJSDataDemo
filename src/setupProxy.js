@@ -68,15 +68,4 @@ module.exports = function(app) {
     })
   );
 
-  app.use(
-    ['/weathermapapi'],
-    createProxyMiddleware({
-      target: 'https://openweathermap.org/weathermap',
-      changeOrigin: true,
-      pathRewrite: {
-        '^/weathermapapi': '',
-      },
-    })
-  );
-
 };
